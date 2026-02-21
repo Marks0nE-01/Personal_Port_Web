@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+import ThemeToggle from "./ThemeToggle";
+
 const navItems = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
@@ -47,6 +49,8 @@ export default function Navbar() {
             )}
           </Link>
         ))}
+        <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1" />
+        <ThemeToggle />
       </motion.div>
     </nav>
   );
