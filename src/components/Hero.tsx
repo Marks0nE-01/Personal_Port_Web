@@ -76,7 +76,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="group relative px-8 py-4 bg-foreground text-background rounded-full font-medium overflow-hidden transition-transform hover:scale-105 active:scale-95">
+          <button className="group relative px-8 py-4 bg-primary text-white rounded-full font-medium overflow-hidden transition-transform hover:scale-105 active:scale-95">
             <span className="relative z-10 flex items-center gap-2">
               View Work <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
