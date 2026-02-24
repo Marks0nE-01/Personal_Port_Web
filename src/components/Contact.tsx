@@ -1,12 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Twitter, Linkedin, Send } from "lucide-react";
+import { Mail, Github, Twitter, Linkedin, Clock, MapPin } from "lucide-react";
+
+const availability = [
+  { icon: Clock, label: "Available for hire", status: true },
+  { icon: MapPin, label: "Remote & Local", status: true }
+];
 
 /**
- * Contact section featuring a call-to-action and a contact form.
- * The layout uses a responsive flexbox that stacks on mobile and 
- * splits into two columns on larger screens.
+ * Contact section featuring availability status and social media links.
+ * Replaces traditional form with more engaging content.
  */
 export default function Contact() {
   return (
@@ -18,60 +22,64 @@ export default function Contact() {
             <span className="text-primary italic">something</span> cool.
           </h2>
           <p className="text-xl text-foreground/60 max-w-md">
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            I'm passionate about creating exceptional digital experiences. Let's collaborate on your next project!
           </p>
-          
-          <div className="flex gap-4">
-            {[Github, Twitter, Linkedin, Mail].map((Icon, i) => (
-              <motion.a
-                key={i}
-                href="#"
-                whileHover={{ y: -5, scale: 1.1 }}
-                className="p-4 rounded-2xl bg-foreground/5 hover:bg-foreground/10 transition-colors"
-              >
-                <Icon className="w-6 h-6" />
-              </motion.a>
-            ))}
-          </div>
         </div>
 
-        <div className="flex-1">
-          <motion.form
+        <div className="flex-1 space-y-8">
+          {/* Availability Section */}
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 bg-foreground/5 p-8 rounded-3xl border border-foreground/10 backdrop-blur-sm"
+            transition={{ delay: 0.2 }}
+            className="space-y-4 bg-foreground/5 p-8 rounded-3xl border border-foreground/10 backdrop-blur-sm"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground/60">Name</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 bg-foreground/5 border border-foreground/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground/60">Email</label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 bg-foreground/5 border border-foreground/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                  placeholder="john@example.com"
-                />
-              </div>
+            <h3 className="text-2xl font-bold">Availability</h3>
+            <div className="space-y-3">
+              {availability.map((item) => (
+                <div key={item.label} className="flex items-center gap-3">
+                  <item.icon className="w-5 h-5 text-primary" />
+                  <span className="font-medium">{item.label}</span>
+                  <div className={`w-3 h-3 rounded-full ml-auto ${
+                    item.status ? 'bg-green-500' : 'bg-red-500'
+                  }`} />
+                </div>
+              ))}
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground/60">Message</label>
-              <textarea
-                rows={4}
-                className="w-full px-4 py-3 bg-foreground/5 border border-foreground/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
-                placeholder="Tell me about your project..."
-              />
+            <motion.a
+              href="mailto:your-email@example.com"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="block w-full py-4 bg-primary text-white rounded-xl font-bold text-center hover:opacity-90 transition-opacity"
+            >
+              Get In Touch
+            </motion.a>
+          </motion.div>
+
+          {/* Social Media Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="space-y-4 bg-foreground/5 p-8 rounded-3xl border border-foreground/10 backdrop-blur-sm"
+          >
+            <h3 className="text-2xl font-bold">Connect</h3>
+            <p className="text-foreground/60">Find me on social media</p>
+            <div className="flex gap-4">
+              {[Github, Linkedin, Mail].map((Icon, i) => (
+                <motion.a
+                  key={i}
+                  href="#"
+                  whileHover={{ y: -5, scale: 1.1 }}
+                  className="p-4 rounded-2xl bg-foreground/10 hover:bg-foreground/20 transition-colors"
+                >
+                  <Icon className="w-6 h-6" />
+                </motion.a>
+              ))}
             </div>
-            <button className="w-full py-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98]">
-              Send Message <Send className="w-4 h-4" />
-            </button>
-          </motion.form>
+          </motion.div>
         </div>
       </div>
       

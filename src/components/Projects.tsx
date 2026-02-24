@@ -1,38 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
-
-const projects = [
-  {
-    title: "E-commerce Redesign",
-    description: "A minimal shopping experience focused on typography and clarity.",
-    category: "Web Development",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
-    link: "#",
-    github: "#",
-    color: "bg-blue-50 dark:bg-blue-900/10"
-  },
-  {
-    title: "Art Gallery Platform",
-    description: "Curating digital art with a playful and interactive interface.",
-    category: "UI/UX Design",
-    image: "https://images.unsplash.com/photo-1551218372-a248eabd143e?q=80&w=1000&auto=format&fit=crop",
-    link: "#",
-    github: "#",
-    color: "bg-rose-50 dark:bg-rose-900/10"
-  },
-  {
-    title: "Task Management App",
-    description: "Helping teams stay productive with a focus on simple workflows.",
-    category: "Product Design",
-    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=1000&auto=format&fit=crop",
-    link: "#",
-    github: "#",
-    color: "bg-emerald-50 dark:bg-emerald-900/10"
-  }
-];
+import ProjectsGrid from "./ProjectsGrid";
 
 /**
  * Projects section displaying a grid of work samples.
@@ -41,55 +9,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-        <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">Selected Work</h2>
-          <p className="text-lg text-foreground/60 max-w-md">
-            A collection of projects where I've blended design and code to solve problems.
-          </p>
-        </div>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-6 py-3 rounded-full border border-black/10 dark:border-white/10 font-medium"
-        >
-          View all projects
-        </motion.button>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className={`group rounded-3xl overflow-hidden p-6 ${project.color} border border-transparent hover:border-black/5 dark:hover:border-white/5 transition-all`}
-          >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative bg-white dark:bg-black/20">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                <a href={project.github} className="p-3 bg-white rounded-full text-black hover:scale-110 transition-transform">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href={project.link} className="p-3 bg-white rounded-full text-black hover:scale-110 transition-transform">
-                  <ExternalLink className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-foreground/40">{project.category}</span>
-              <h3 className="text-2xl font-bold">{project.title}</h3>
-              <p className="text-foreground/60 line-clamp-2">{project.description}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+      <ProjectsGrid />
     </section>
   );
 }

@@ -3,18 +3,18 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #3b82f6;
-  --color-secondary: #f43f5e;
-  --color-accent: #10b981;
+  --color-primary: #2563eb;
+  --color-secondary: #e11d48;
+  --color-accent: #059669;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #111111;
-  --card: #f9f9f9;
-  --card-foreground: #111111;
+  --foreground: #000000;
+  --card: #f1f3f4;
+  --card-foreground: #1a1a1a;
 }
 
 .dark {

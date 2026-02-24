@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import FloatingProjectsModal from "./FloatingProjectsModal";
 
 /**
  * Hero component displaying the landing introduction.
@@ -10,6 +12,7 @@ import { ArrowRight } from "lucide-react";
  */
 export default function Hero() {
   const text = "HI, I'm Mark";
+  const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
   
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
@@ -67,7 +70,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-xl md:text-2xl text-foreground/60 max-w-2xl mx-auto"
         >
-          A designer & developer building minimal, functional, and delightful web applications.
+        developer & operator building software solutions.
         </motion.p>
 
         <motion.div
@@ -76,7 +79,10 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="group relative px-8 py-4 bg-primary text-white rounded-full font-medium overflow-hidden transition-transform hover:scale-105 active:scale-95">
+          <button 
+            onClick={() => setIsProjectsModalOpen(true)}
+            className="group relative px-8 py-4 bg-primary text-white rounded-full font-medium overflow-hidden transition-transform hover:scale-105 active:scale-95"
+          >
             <span className="relative z-10 flex items-center gap-2">
               View Work <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
@@ -97,6 +103,12 @@ export default function Hero() {
         animate={{ y: [0, 20, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute bottom-1/3 right-10 md:right-20 w-10 h-10 border-2 border-secondary/20 rounded-full hidden md:block"
+      />
+      
+      {/* Floating Projects Modal */}
+      <FloatingProjectsModal 
+        isOpen={isProjectsModalOpen} 
+        onClose={() => setIsProjectsModalOpen(false)} 
       />
     </section>
   );
