@@ -21,55 +21,23 @@ export const projects = [
     link: "#",
     github: "#",
     color: "bg-rose-50 dark:bg-rose-900/10"
-  },
-  {
-    title: "Task Management App",
-    description: "Helping teams stay productive with a focus on simple workflows.",
-    category: "Product Design",
-    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=1000&auto=format&fit=crop",
-    link: "#",
-    github: "#",
-    color: "bg-emerald-50 dark:bg-emerald-900/10"
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Real-time weather tracking with beautiful data visualizations and forecasts.",
-    category: "Web Development",
-    image: "https://images.unsplash.com/photo-1592210454359-9043fae6d098?q=80&w=1000&auto=format&fit=crop",
-    link: "#",
-    github: "#",
-    color: "bg-purple-50 dark:bg-purple-900/10"
-  },
-  {
-    title: "Social Media Analytics",
-    description: "Comprehensive analytics dashboard for social media performance tracking.",
-    category: "Data Visualization",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
-    link: "#",
-    github: "#",
-    color: "bg-orange-50 dark:bg-orange-900/10"
-  },
-  {
-    title: "Portfolio Website",
-    description: "A clean and modern portfolio site showcasing creative work and projects.",
-    category: "Web Design",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
-    link: "#",
-    github: "#",
-    color: "bg-teal-50 dark:bg-teal-900/10"
   }
+  
+
 ];
 
 interface ProjectsGridProps {
   showHeader?: boolean;
   showViewAllButton?: boolean;
   animationDelay?: number;
+  onOpenProjectsModal?: () => void;
 }
 
 export default function ProjectsGrid({ 
   showHeader = true, 
   showViewAllButton = true,
-  animationDelay = 0 
+  animationDelay = 0,
+  onOpenProjectsModal
 }: ProjectsGridProps) {
   return (
     <div className="space-y-8">
@@ -85,6 +53,7 @@ export default function ProjectsGrid({
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={onOpenProjectsModal}
               className="px-6 py-3 rounded-full border border-black/10 dark:border-white/10 font-medium"
             >
               View all projects

@@ -12,6 +12,7 @@ const navItems = [
   { name: "Contact", href: "#contact" },
 ];
 
+
 /**
  * Floating Navigation Bar component.
  * Features a dynamic hover effect using Framer Motion's layoutId

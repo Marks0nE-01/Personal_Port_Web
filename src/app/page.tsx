@@ -3,9 +3,14 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import StackMenu from "@/components/StackMenu";
+import StackModal from "@/components/StackModal";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import FloatingProjectsModal from "@/components/FloatingProjectsModal";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useState } from "react";
+import { stacks } from "@/components/StackMenu";
 
 /**
  * Main application page component.
@@ -21,6 +26,20 @@ export default function Home() {
     restDelta: 0.001
   });
 
+  const [selectedStack, setSelectedStack] = useState<typeof stacks[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
+
+  const handleStackSelect = (stack: typeof stacks[0]) => {
+    setSelectedStack(stack);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedStack(null), 300);
+  };
+
   return (
     <main className="min-h-screen relative">
       <motion.div
@@ -30,8 +49,19 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Projects />
+      <StackMenu onStackSelect={handleStackSelect} />
+      <Projects onOpenProjectsModal={() => setIsProjectsModalOpen(true)} />
       <Contact />
+      
+      <StackModal 
+        stack={selectedStack}
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+      />
+      <FloatingProjectsModal 
+        isOpen={isProjectsModalOpen} 
+        onClose={() => setIsProjectsModalOpen(false)} 
+      />
     </main>
   );
 }

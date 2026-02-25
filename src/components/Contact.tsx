@@ -17,13 +17,6 @@ export default function Contact() {
     <section id="contact" className="py-24 px-6 bg-background text-foreground">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
         <div className="flex-1 space-y-8">
-          <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-            Let's build <br />
-            <span className="text-primary italic">something</span> cool.
-          </h2>
-          <p className="text-xl text-foreground/60 max-w-md">
-            I'm passionate about creating exceptional digital experiences. Let's collaborate on your next project!
-          </p>
         </div>
 
         <div className="flex-1 space-y-8">
@@ -84,7 +77,7 @@ export default function Contact() {
       </div>
       
       <footer className="mt-24 pt-8 border-t border-foreground/10 text-center text-foreground/40 text-sm">
-        <p>© {new Date().getFullYear()} - Mark</p>
+        <p>© {new Date().getFullYear()} -  Nontapat Ngajuer. All rights reserved.</p>
       </footer>
     </section>
   );
