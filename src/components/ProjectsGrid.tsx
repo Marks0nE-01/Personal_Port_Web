@@ -44,9 +44,9 @@ export default function ProjectsGrid({
       {showHeader && (
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">Selected Work</h2>
+            <h2 className="text-4xl md:text-5xl font-bold" >Project </h2><h2 className="text-4xl md:text-5xl font-bold  text-[#FF0000]" >(under construction)</h2>
             <p className="text-lg text-foreground/60 max-w-md">
-              A collection of projects where I've blended design and code to solve problems.
+              A collection of projects 
             </p>
           </div>
           {showViewAllButton && (

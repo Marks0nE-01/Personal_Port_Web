@@ -40,14 +40,7 @@ export default function Contact() {
                 </div>
               ))}
             </div>
-            <motion.a
-              href="mailto:your-email@example.com"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="block w-full py-4 bg-primary text-white rounded-xl font-bold text-center hover:opacity-90 transition-opacity"
-            >
-              Get In Touch
-            </motion.a>
+           
           </motion.div>
 
           {/* Social Media Card */}

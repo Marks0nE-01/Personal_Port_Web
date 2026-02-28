@@ -11,7 +11,7 @@ const featuredProjects = [
     title: "E-Commerce Platform",
     description: "Full-stack e-commerce solution with payment integration",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&auto=format",
-    tech: ["React", "Node.js", "MongoDB"],
+    tech: ["React", "", "MongoDB"],
     github: "https://github.com",
     live: "https://example.com"
   },

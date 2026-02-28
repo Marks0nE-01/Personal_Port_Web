@@ -21,10 +21,10 @@ const stacks = [
     color: "from-blue-500 to-cyan-500",
     description: "Modern web development technologies",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&auto=format",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    experienceLevel: "Intermediate",
-    yearsExperience: "1+ Years",
-    projectsCompleted: "5+"
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    experienceLevel: "Beginner",
+    yearsExperience: "0.5 Years",
+    projectsCompleted: "2"
   },
   {
     id: "backend",
@@ -57,10 +57,10 @@ const stacks = [
     color: "from-rose-500 to-orange-500",
     description: "UI/UX design and prototyping",
     image: "https://images.unsplash.com/photo-1559028006-44a35f9a9c4d?w=400&h=300&fit=crop&auto=format",
-    technologies: ["Figma", "Adobe XD", "UI/UX", "Prototyping", "Design Systems"],
-    experienceLevel: "Intermediate",
-    yearsExperience: "1+ Years",
-    projectsCompleted: "4+"
+    technologies: ["Figma", "Adobe Designer", "UI/UX", "Prototyping"],
+    experienceLevel: "Beginner",
+    yearsExperience: "0.5 Years",
+    projectsCompleted: "2"
   },
   
   {
@@ -70,10 +70,10 @@ const stacks = [
     color: "from-sky-500 to-blue-500",
     description: "Cloud services and deployment",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&auto=format",
-    technologies: ["AWS", "Vercel", "Docker", "CI/CD", "Serverless"],
+    technologies: ["AWS", "Vercel", "Docker", "CI/CD"],
     experienceLevel: "Beginner",
     yearsExperience: "0.5 Years",
-    projectsCompleted: "2"
+    projectsCompleted: "1"
   },
   {
     id: "devops",
@@ -82,7 +82,7 @@ const stacks = [
     color: "from-amber-500 to-yellow-500",
     description: "Development operations and automation",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&auto=format",
-    technologies: ["Git", "GitHub Actions", "Docker", "Kubernetes", "Monitoring"],
+    technologies: ["Git", "GitHub Actions", "Docker", "Kubernetes"],
     experienceLevel: "Beginner",
     yearsExperience: "0.5 Years",
     projectsCompleted: "1"
