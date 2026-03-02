@@ -84,33 +84,25 @@ export default function StackModal({ stack, isOpen, onClose }: StackModalProps) 
               className="pointer-events-auto max-w-4xl w-full max-h-[90vh] overflow-hidden"
             >
               <div className="bg-background rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                {/* Header with image */}
-                <div className="relative h-64 md:h-80 overflow-hidden">
-                  <img 
-                    src={stack.image} 
-                    alt={stack.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent`} />
-                  
+                {/* Header without image */}
+                <div className="relative p-8 bg-gradient-to-br from-primary/10 to-primary/5">
                   {/* Close button */}
                   <button
                     onClick={onClose}
-                    className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                    className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-black hover:bg-white/30 transition-colors"
                   >
                     <X className="w-5 h-5" />
                   </button>
                   
-                  {/* Title overlay */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stack.color} flex items-center justify-center`}>
-                        <stack.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <h2 className="text-3xl md:text-4xl font-bold text-white">{stack.name}</h2>
+                  {/* Title */}
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stack.color} flex items-center justify-center`}>
+                      <stack.icon className="w-6 h-6 text-white" />
                     </div>
-                    <p className="text-white/90 text-lg max-w-2xl">{stack.description}</p>
+                    <div>
+                      <h2 className="text-3xl md:text-4xl font-bold">{stack.name}</h2>
+                      <p className="text-foreground/80 text-lg max-w-2xl mt-2">{stack.description}</p>
+                    </div>
                   </div>
                 </div>
                 

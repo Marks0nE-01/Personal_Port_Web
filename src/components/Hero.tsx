@@ -16,25 +16,24 @@ export default function Hero() {
   
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-      {/* Background playful elements - slow scaling and rotating blobs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 90, 0],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/4 -left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          rotate: [0, -90, 0],
-        }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl -z-10"
-      />
 
       <div className="max-w-4xl w-full space-y-8 text-center">
+        {/* Animated image above the text */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0, rotate: -180 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1, delay: 0.3, type: "spring", stiffness: 100 }}
+          className="w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full overflow-hidden border-4 border-background shadow-lg"
+        >
+          <motion.img
+            src="/favicon.ico"
+            alt="Profile"
+            className="w-full h-full object-cover"
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,23 +86,12 @@ export default function Hero() {
               View Work <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
           </button>
-          <button className="px-8 py-4 rounded-full font-medium border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+          <a href="#contact" className="px-8 py-4 rounded-full font-medium border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors inline-block">
             Contact Me
-          </button>
+          </a>
         </motion.div>
       </div>
 
-      {/* Decorative floating elements */}
-      <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-10 md:left-20 w-12 h-12 border-2 border-accent/20 rounded-xl rotate-12 hidden md:block"
-      />
-      <motion.div
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-1/3 right-10 md:right-20 w-10 h-10 border-2 border-secondary/20 rounded-full hidden md:block"
-      />
       
       {/* Floating Projects Modal */}
       <FloatingProjectsModal 

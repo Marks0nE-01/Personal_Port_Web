@@ -33,7 +33,7 @@ const stacks = [
     color: "from-green-500 to-emerald-500",
     description: "Server-side development and APIs",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&auto=format",
-    technologies: ["Node.js", "PostgreSQL", "MongoDB", "REST APIs"],
+    technologies: ["Node.js", "MongoDB", "REST APIs"],
     experienceLevel: "Beginner",
     yearsExperience: "0.5 Years",
     projectsCompleted: "3"
@@ -57,7 +57,7 @@ const stacks = [
     color: "from-rose-500 to-orange-500",
     description: "UI/UX design and prototyping",
     image: "https://images.unsplash.com/photo-1559028006-44a35f9a9c4d?w=400&h=300&fit=crop&auto=format",
-    technologies: ["Figma", "Adobe Designer", "UI/UX", "Prototyping"],
+    technologies: ["Figma", "Adobe Designer","Canva", "Prototyping"],
     experienceLevel: "Beginner",
     yearsExperience: "0.5 Years",
     projectsCompleted: "2"
@@ -70,7 +70,7 @@ const stacks = [
     color: "from-sky-500 to-blue-500",
     description: "Cloud services and deployment",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&auto=format",
-    technologies: ["AWS", "Vercel", "Docker", "CI/CD"],
+    technologies: ["AWS", "Vercel", "Docker", ],
     experienceLevel: "Beginner",
     yearsExperience: "0.5 Years",
     projectsCompleted: "1"
@@ -82,7 +82,7 @@ const stacks = [
     color: "from-amber-500 to-yellow-500",
     description: "Development operations and automation",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&auto=format",
-    technologies: ["Git", "GitHub Actions", "Docker", "Kubernetes"],
+    technologies: ["Git", "GitHub Actions", "CI/CD"],
     experienceLevel: "Beginner",
     yearsExperience: "0.5 Years",
     projectsCompleted: "1"

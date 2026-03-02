@@ -8,9 +8,9 @@ export const projects = [
     title: "Personal Portfolio",
     description: "Nontapat ngajuer personal portfolio website.",
     category: "Web Development",
-    image: "",
-    link: "#",
-    github: "#",
+    image: "https://cdn.oneesports.co.th/cdn-data/sites/3/2024/09/Screenshot-2024-09-18-152623-1-1024x545.jpg",
+    link: "https://www.nontapat.page/",
+    github: "https://github.com/Marks0nE-01/Personal_Port_Web",
     color: "bg-blue-50 dark:bg-blue-900/10"
   }
   
