@@ -15,11 +15,8 @@ const availability = [
 export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6 bg-background text-foreground">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
-        <div className="flex-1 space-y-8">
-        </div>
-
-        <div className="flex-1 space-y-8">
+      <div className="max-w-7xl mx-auto flex justify-center">
+        <div className="w-full max-w-2xl space-y-8">
           {/* Availability Section */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -54,10 +51,10 @@ export default function Contact() {
             <h3 className="text-2xl font-bold">Connect</h3>
             <p className="text-foreground/60">Find me on social media</p>
             <div className="flex gap-4">
-              {[Github, Linkedin, Mail].map((Icon, i) => (
+              {[Github, Mail].map((Icon, i) => (
                 <motion.a
                   key={i}
-                  href="#"
+                  href={Icon === Github ? "https://github.com/Marks0nE-01" : "mailto:nontapat.main@gmail.com"}
                   whileHover={{ y: -5, scale: 1.1 }}
                   className="p-4 rounded-2xl bg-foreground/10 hover:bg-foreground/20 transition-colors"
                 >

@@ -17,6 +17,7 @@ import { stacks } from "@/components/StackMenu";
  * Uses Framer Motion's useScroll and useSpring to create a smooth, 
  * interactive scroll progress bar at the top of the viewport.
  */
+
 export default function Home() {
   const { scrollYProgress } = useScroll();
   // Create a spring-animated scale value based on scroll progress

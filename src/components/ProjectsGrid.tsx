@@ -5,22 +5,13 @@ import { ExternalLink, Github } from "lucide-react";
 
 export const projects = [
   {
-    title: "E-commerce Redesign",
-    description: "A minimal shopping experience focused on typography and clarity.",
+    title: "Personal Portfolio",
+    description: "Nontapat ngajuer personal portfolio website.",
     category: "Web Development",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    image: "",
     link: "#",
     github: "#",
     color: "bg-blue-50 dark:bg-blue-900/10"
-  },
-  {
-    title: "Art Gallery Platform",
-    description: "Curating digital art with a playful and interactive interface.",
-    category: "UI/UX Design",
-    image: "https://images.unsplash.com/photo-1551218372-a248eabd143e?q=80&w=1000&auto=format&fit=crop",
-    link: "#",
-    github: "#",
-    color: "bg-rose-50 dark:bg-rose-900/10"
   }
   
 
