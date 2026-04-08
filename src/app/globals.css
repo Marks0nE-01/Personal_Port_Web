@@ -3,6 +3,8 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
   --color-primary: #2563eb;
   --color-secondary: #e11d48;
   --color-accent: #059669;
@@ -11,29 +13,37 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #DEDCDC;
   --foreground: #000000;
-  --card: #f1f3f4;
-  --card-foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --heading: #60a5fa; /* Light Blue */
 }
 
 .dark {
-  --background: #050505;
-  --foreground: #fafafa;
-  --card: #111111;
-  --card-foreground: #fafafa;
+  --background: #1f2937; /* Gray */
+  --foreground: #ffffff; /* White */
+  --card: #2d3748; /* Slightly darker than background for dark mode */
+  --card-foreground: #ffffff;
+  --heading: #60a5fa; /* Light Blue */
 }
 
 body {
-  background: var(--background);
+  background: var(--card); /* Base body background becomes card color (white in light) */
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading);
 }
 
 ::selection {
-  background: #3b82f6;
-  color: white;
+  background: var(--heading);
+  color: var(--background);
 }
 
 .playful-underline {
@@ -58,4 +68,12 @@ body {
 .playful-underline:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.div1 {
+  background: var(--card);
+  color: var(--card-foreground);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
