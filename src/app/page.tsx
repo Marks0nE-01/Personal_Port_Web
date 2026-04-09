@@ -1,11 +1,11 @@
 "use client";
 
-import { Github, Mail, Linkedin, MapPin, ExternalLink } from "lucide-react";
+import { Github, Mail, Linkedin, MapPin, ExternalLink, FileDown } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-foreground font-sans relative">
+    <div className="min-h-screen text-foreground font-sans relative print:pt-10 print:px-8">
       {/* Background split for full screen width */}
       <div className="absolute inset-0 z-0 flex">
         <div className="w-full md:w-1/3 bg-card hidden md:block" />
@@ -17,7 +17,7 @@ export default function Home() {
         <aside className="w-full md:w-1/3 p-8 lg:p-12 flex flex-col md:sticky md:top-0 md:h-screen md:overflow-y-auto border-b md:border-b-0 md:border-r border-foreground/10 bg-card">
         <div className="space-y-8 flex-1">
           {/* Avatar Area */}
-          <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-foreground/10 bg-card">
+          <div className="w-32 h-32 md:w-48 md:h-48 print:w-48 print:h-48 rounded-full overflow-hidden border border-foreground/10 bg-card">
             <img 
               src="/favicon.ico" 
               alt="Profile" 
@@ -31,7 +31,7 @@ export default function Home() {
             <p className="text-xl text-foreground/60 font-medium">Software Developer</p>
           </div>
           
-          <div className="flex gap-4">
+          <div className="flex gap-4 print:hidden">
              <a href="https://github.com/BlackNortan-MARK01" target="_blank" rel="noreferrer" className="p-3 bg-foreground/5 hover:bg-foreground/10 rounded-xl transition-colors">
                <Github className="w-5 h-5 text-foreground" />
              </a>
@@ -43,8 +43,16 @@ export default function Home() {
              </a>
              <ThemeToggle />
           </div>
+
+          <button 
+            onClick={() => window.print()}
+            className="flex items-center gap-2 w-fit text-foreground/60 hover:text-heading transition-colors mt-4 text-sm font-medium print:hidden"
+          >
+            <FileDown className="w-5 h-5" />
+            <span>Generate PDF Resume</span>
+          </button>
         </div>
-        <div className="mt-8 md:mt-0 pt-8 border-t border-foreground/10 text-sm text-foreground/40">
+        <div className="mt-8 md:mt-0 pt-8 border-t border-foreground/10 text-sm text-foreground/40 print:hidden">
           <p>© {new Date().getFullYear()} Nontapat Ngajuer. All rights reserved.</p>
         </div>
       </aside>
@@ -68,11 +76,11 @@ export default function Home() {
           <div className="flex flex-col gap-3 text-foreground/80 text-lg">
             <div className="flex items-center gap-3">
               <MapPin className="w-6 h-6" />
-              <span>Available for Remote & Local opportunities</span>
+              <span>Pattaya, Chon Buri, Thailand</span>
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="w-6 h-6" />
-              <span>Pattaya, Chon Buri, Thailand</span>
+              <span>Available for Remote & Local opportunities</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-6 h-6" />
@@ -182,7 +190,7 @@ export default function Home() {
                 <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Web Development</span>
               </div>
               <p className="text-foreground/80 leading-relaxed">
-                Nontapat ngajuer personal portfolio website. A beautiful space to host projects and showcase my skills.
+                My personal portfolio website. :3
               </p>
               
               <div className="flex flex-wrap gap-2 pt-2">
@@ -192,17 +200,18 @@ export default function Home() {
                 <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">TYPESCRIPT</span>
               </div>
               
-              <div className="flex gap-4 pt-2">
-                <a href="https://github.com/Marks0nE-01/Personal_Port_Web" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold hover:underline">
+              <div className="flex gap-4 pt-2 print:hidden">
+                <a href="https://github.com/Marks0nE-01/Personal_Port_Web" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold border-b border-transparent hover:border-foreground transition-colors">
                   <Github className="w-4 h-4" /> Code
                 </a>
-                <a href="https://www.nontapat.page/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold hover:underline">
+                <a href="https://www.nontapat.page/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold border-b border-transparent hover:border-foreground transition-colors">
                   <ExternalLink className="w-4 h-4" /> Live Demo
                 </a>
               </div>
             </div>
             
-            <div className="space-y-4">
+            {/* The "More Projects" section is hidden in print to keep the resume clean and focused */}
+            <div className="space-y-4 print:hidden">
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
                 <h3 className="text-xl font-bold text-red-500">More Projects</h3>
                 <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Under Construction</span>

@@ -37,6 +37,75 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .dark {
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+  }
+  
+  button {
+    display: none !important;
+  }
+
+  aside {
+    border-right: none !important;
+    padding: 0 !important;
+    height: auto !important;
+    width: 25% !important;
+    position: static !important;
+  }
+
+  main {
+    padding: 0 !important;
+    width: 75% !important;
+  }
+
+  section {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 1rem !important;
+    page-break-inside: avoid;
+  }
+
+  .bg-card, .bg-background {
+    background: transparent !important;
+  }
+
+  .flex-col.md\:flex-row {
+    flex-direction: row !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Make text generally smaller and more compact for resumes */
+  html {
+    font-size: 13px !important;
+  }
+  
+  .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem !important;
+  }
+  
+  .space-y-12 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5rem !important;
+  }
+  
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.75rem !important;
+  }
+
+  @page {
+    margin: 0.5cm 1cm;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading);
 }
